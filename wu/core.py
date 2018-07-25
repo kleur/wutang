@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 from wu import helpers
-
-class Category:
-    name = "no-name"
-    keywords = []
+from wu import domain
 
 def execute_me():
     categories = init_categories()
-    records = helpers.import_csv()
+    records = helpers.import_csv('finance_records.csv')
     apply_categories(categories, records)
 
 def apply_category(categories, record):
@@ -23,7 +20,7 @@ def apply_categories(categories, records):
         apply_category(categories, r)
 
 def create_category(name, keywords):
-    category = Category()
+    category = domain.Category()
     category.name = name
     category.keywords = keywords
     return category

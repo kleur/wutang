@@ -1,3 +1,5 @@
+from wu import domain
+
 def to_amount(raw_amount, pos):
     from decimal import Decimal
     if(pos == "Af"):
@@ -6,20 +8,8 @@ def to_amount(raw_amount, pos):
     raw_amount = Decimal(raw_amount)
     return raw_amount
 
-class Record:
-    date="unknown"
-    description="unknown"
-    amount="unknown"
-    kind="unknown"
-    category="unknown"
-
-    def prettyprint(self):
-        print("date: %s amount: %s category: %s" % (self.date, self.amount, self.category))
-        if self.category == "unknown":
-            print(" descr: %s" % (self.description))
-
 def make_record(date, amount, kind, description):
-    myRecord = Record()
+    myRecord = domain.Record()
     myRecord.date = date
     myRecord.amount = amount
     myRecord.kind = kind
@@ -33,12 +23,12 @@ def to_record(row):
     desc_str = row[1] + " " + row[8]
     return make_record(date, amount, kind, desc_str)
 
-def import_csv():
+def import_csv(filename):
     records = []
     import csv
-    with open('finance_records.csv', 'rb') as csvfile:
-        spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        for row in spamreader:
+    with open(filename, 'rb') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+        for row in reader:
             record = to_record(row)
             records.append(record)
     return records
