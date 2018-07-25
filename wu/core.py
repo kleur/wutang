@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from wu import helpers
 from wu import domain
+from wu import csv_reader
 
 def execute_me():
     categories = init_categories()
-    rows = helpers.import_csv('finance_records.csv')
+    rows = csv_reader.import_csv('finance_records.csv')
     records = helpers.to_records(rows)
-
     apply_categories(categories, records)
 
 def apply_category(categories, record):
