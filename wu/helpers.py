@@ -24,11 +24,17 @@ def to_record(row):
     return make_record(date, amount, kind, desc_str)
 
 def import_csv(filename):
-    records = []
     import csv
+    rows = []
     with open(filename, 'rb') as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
         for row in reader:
-            record = to_record(row)
-            records.append(record)
+            rows.append(row)
+    return rows
+
+def to_records(rows):
+    records = []
+    for row in rows:
+        record = to_record(row)
+        records.append(record)
     return records

@@ -4,7 +4,9 @@ from wu import domain
 
 def execute_me():
     categories = init_categories()
-    records = helpers.import_csv('finance_records.csv')
+    rows = helpers.import_csv('finance_records.csv')
+    records = helpers.to_records(rows)
+
     apply_categories(categories, records)
 
 def apply_category(categories, record):
