@@ -7,16 +7,6 @@ class Category:
     name = "no-name"
     keywords = []
 
-def get_hmm():
-    """Get a thought."""
-    helpers.print_dawg()
-    return 'hmmm...'
-
-def hmm():
-    """Contemplation..."""
-    if helpers.get_answer():
-        print(get_hmm())
-
 def execute_me():
     init_categories()
     records = helpers.import_csv()

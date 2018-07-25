@@ -1,10 +1,3 @@
-def get_answer():
-    """Get an answer."""
-    return True
-
-def print_dawg():
-    print('dawg')
-
 def to_amount(raw_amount, pos):
     from decimal import Decimal
     if(pos == "Af"):
