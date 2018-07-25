@@ -1,18 +1,16 @@
 # -*- coding: utf-8 -*-
 from wu import helpers
 
-categories = []
-
 class Category:
     name = "no-name"
     keywords = []
 
 def execute_me():
-    init_categories()
+    categories = init_categories()
     records = helpers.import_csv()
-    apply_categories(records)
+    apply_categories(categories, records)
 
-def apply_category(record):
+def apply_category(categories, record):
     for c in categories:
         keywords = c.keywords
         for keyword in keywords:
@@ -20,9 +18,9 @@ def apply_category(record):
                 record.category = c.name
     record.prettyprint()
 
-def apply_categories(records):
+def apply_categories(categories, records):
     for r in records:
-        apply_category(r)
+        apply_category(categories, r)
 
 def create_category(name, keywords):
     category = Category()
@@ -31,6 +29,7 @@ def create_category(name, keywords):
     return category
 
 def init_categories():
+    categories = []
     categories.append(create_category("sparen", ["spaarrekening"]))
     categories.append(create_category("wonen", ["YMERE", "DRINKWATER", "moneys"]))
     categories.append(create_category("verzekering", ["D.S.W. Zorgverzekeraar"]))
@@ -43,3 +42,4 @@ def init_categories():
     categories.append(create_category("diversen", ["DEBETRENTE"]))
     categories.append(create_category("contributie", ["Reunistenbijdrage"]))
     categories.append(create_category("contributie", ["Reunistenbijdrage"]))
+    return categories
