@@ -1,4 +1,18 @@
 from wu import domain
+from wu import file_reader
+
+def init_records(filename):
+    rows = file_reader.import_csv(filename)
+    records = to_records(rows)
+    return records
+
+def init_categories(filename):
+    categories = []
+    cats = file_reader.import_yaml(filename)
+    for cat in cats:
+        for k,v in cat.items():
+            categories.append(create_category(k, v))
+    return categories
 
 def to_records(rows):
     records = []
@@ -29,3 +43,9 @@ def make_record(date, amount, kind, description):
     myRecord.kind = kind
     myRecord.description = description
     return myRecord
+
+def create_category(name, keywords):
+    category = domain.Category()
+    category.name = name
+    category.keywords = keywords
+    return category

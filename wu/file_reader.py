@@ -9,13 +9,6 @@ def import_csv(filename):
             rows.append(row)
     return rows
 
-def import_yaml2(filename):
-    with open("categories.yaml", 'r') as stream:
-        try:
-            print(yaml.load(stream))
-        except yaml.YAMLError as exc:
-            print(exc)
-
 def import_yaml(filename):
     roots = []
     stream = open(filename, "r")
