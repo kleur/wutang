@@ -18,4 +18,4 @@ def apply_categories(categories, records):
     for r in records:
         apply_category(categories, r)
 
-#TODO: 
+#TODO: split records into months
