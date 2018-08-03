@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 from wu import helpers
+from wu import domain
 
 def execute_me():
     categories = helpers.init_categories('categories.yaml')
     records = helpers.init_records('finance_records.csv')
-    apply_categories(categories, records)
+    records_categorized = apply_categories(categories, records)
+
+    repository = domain.Repository
+
 
 def apply_category(categories, record):
     for c in categories:
@@ -13,9 +17,12 @@ def apply_category(categories, record):
             if keyword in record.description:
                 record.category = c.name
     record.prettyprint()
+    return record
 
 def apply_categories(categories, records):
+    categorized = []
     for r in records:
-        apply_category(categories, r)
+        categorized.append(apply_category(categories, r))
+    return categorized
 
 #TODO: split records into months
