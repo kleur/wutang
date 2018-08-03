@@ -8,4 +8,6 @@ with open('README.rst') as f:
 with open('LICENSE') as f:
     license = f.read()
 
-setup()
+install_requires = [
+    'yaml'
+]

@@ -9,6 +9,8 @@ def execute_me():
     records = helpers.to_records(rows)
     apply_categories(categories, records)
 
+    file_reader.import_yaml('categories.yaml')
+
 def apply_category(categories, record):
     for c in categories:
         keywords = c.keywords
