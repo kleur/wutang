@@ -4,12 +4,10 @@ from wu import domain
 from wu import file_reader
 
 def execute_me():
-    categories = init_categories()
+    categories = init_categories('categories.yaml')
     rows = file_reader.import_csv('finance_records.csv')
     records = helpers.to_records(rows)
     apply_categories(categories, records)
-
-    file_reader.import_yaml('categories.yaml')
 
 def apply_category(categories, record):
     for c in categories:
@@ -29,18 +27,11 @@ def create_category(name, keywords):
     category.keywords = keywords
     return category
 
-def init_categories():
+def init_categories(filename):
     categories = []
-    categories.append(create_category("sparen", ["spaarrekening"]))
-    categories.append(create_category("wonen", ["YMERE", "DRINKWATER", "moneys"]))
-    categories.append(create_category("verzekering", ["D.S.W. Zorgverzekeraar"]))
-    categories.append(create_category("telecom", ["Telfort"]))
-    categories.append(create_category("auto", ["TEXACO"]))
-    categories.append(create_category("supermarkt", ["Albert Heijn", "DEEN"]))
-    categories.append(create_category("media", ["Netflix", "videoland"]))
-    categories.append(create_category("sport", ["Basic Fit"]))
-    categories.append(create_category("lunch", ["Vitam"]))
-    categories.append(create_category("diversen", ["DEBETRENTE"]))
-    categories.append(create_category("contributie", ["Reunistenbijdrage"]))
-    categories.append(create_category("contributie", ["Reunistenbijdrage"]))
+    cats = file_reader.import_yaml(filename)
+    for cat in cats:
+        for k,v in cat.items():
+            categories.append(create_category(k, v))
+            print(k, "->", v)
     return categories
