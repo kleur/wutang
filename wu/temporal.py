@@ -5,9 +5,9 @@ class Repository:
         self.bookyears = bookyears
 
 class TemporalUnit:
-    def __init__(self, unit, number, records):
+    def __init__(self, year, unit, records):
+        self.year = year
         self.unit = unit
-        self.number = number
         self.records = records
 
     def prettyprint(self):
@@ -25,7 +25,7 @@ class TemporalUnit:
         print("\n")
 
     def get_header(self):
-        return "%s %s" % (self.unit, self.number)
+        return "%s %s" % (self.unit, self.year)
 
     def get_totals_line(self):
         total_in = 0
@@ -66,7 +66,22 @@ class BookYear:
         self.months = months
 
 class Month(TemporalUnit):
-    def __init__(self, unit, number, records, year):
-        TemporalUnit.__init__(self, unit, number, records)
+    def __init__(self, unit, year, records, number):
+        TemporalUnit.__init__(self, year, unit, records)
         self.name = calendar.month_name[number]
-        self.year = year
+        self.number = number
+
+    def get_header(self):
+        return "%s %s" % (self.name, self.year)
+
+class Quarter(TemporalUnit):
+    def __init__(self, unit, year, records, number):
+        TemporalUnit.__init__(self, year, unit, records)
+        self.name = 'Q' + str(number)
+        self.number = number
+
+    def get_header(self):
+        return "%s %s" % (self.name, self.year)
+
+class split_strategy:
+    pass

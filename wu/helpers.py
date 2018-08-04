@@ -33,7 +33,7 @@ def split_months(records):
             month = months.get(key)
             month.records.append(record)
         else:
-            months.update({key:temporal.Month('Month', m, [record], y)})
+            months.update({key:temporal.Month('Month', y, [record], m)})
 
     print_months(months)
     return months
