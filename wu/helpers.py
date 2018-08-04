@@ -19,19 +19,20 @@ def init_categories(filename):
 
 def print_months(months):
     for k in months.keys():
-        entries = months.get(k)
-        for e in entries:
-            print(e.to_string())
+        month = months.get(k)
+        month.prettyprint()
 
 def split_months(records):
     months = dict()
     for record in records:
-        key = str(record.date.year) + '_' + str(record.date.month)
+        y = record.date.year
+        m = record.date.month
+        key = str(y) + '_' + str(m)
         if(months.has_key(key)):
             month = months.get(key)
-            month.append(record)
+            month.records.append(record)
         else:
-            months.update({key:[record]})
+            months.update({key:domain.Month(m, [record])})
 
     print_months(months)
     return months
