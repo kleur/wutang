@@ -17,27 +17,10 @@ def init_categories(filename):
             categories.append(create_category(k, v))
     return categories
 
-
-def print_months(months):
-    for k in months.keys():
-        month = months.get(k)
+def print_units(temporal_units):
+    for k in temporal_units.keys():
+        month = temporal_units.get(k)
         month.prettyprint()
-
-def split_months(records):
-    months = dict()
-    for record in records:
-        y = record.date.year
-        m = record.date.month
-        key = str(y) + '_' + str(m)
-        if(months.has_key(key)):
-            month = months.get(key)
-            month.records.append(record)
-        else:
-            months.update({key:temporal.Month('Month', y, [record], m)})
-
-    print_months(months)
-    return months
-
 
 def to_records(rows):
     records = []
@@ -71,7 +54,7 @@ def to_amount(raw_amount, pos):
 def make_record(date, amount, kind, description):
     myRecord = domain.Record()
     myRecord.date = date
-    myRecord.quarter = int(math.ceil(date.month/3))
+    myRecord.quarter = int(math.ceil(float(date.month)/3))
     myRecord.amount = amount
     myRecord.kind = kind
     myRecord.description = description

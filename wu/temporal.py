@@ -1,9 +1,5 @@
 import calendar
 
-class Repository:
-    def __init__(self, bookyears):
-        self.bookyears = bookyears
-
 class TemporalUnit:
     def __init__(self, year, unit, records):
         self.year = year
@@ -60,11 +56,6 @@ class TemporalUnit:
                 categories.update({key:r.amount})
         return categories
 
-class BookYear:
-    def __init__(self, number, months):
-        self.number = number
-        self.months = months
-
 class Month(TemporalUnit):
     def __init__(self, unit, year, records, number):
         TemporalUnit.__init__(self, year, unit, records)
@@ -82,6 +73,3 @@ class Quarter(TemporalUnit):
 
     def get_header(self):
         return "%s %s" % (self.name, self.year)
-
-class split_strategy:
-    pass
