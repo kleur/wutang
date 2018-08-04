@@ -1,4 +1,5 @@
 from wu import domain
+from wu import temporal
 from wu import file_reader
 import datetime
 import math
@@ -32,7 +33,7 @@ def split_months(records):
             month = months.get(key)
             month.records.append(record)
         else:
-            months.update({key:domain.Month(m, [record])})
+            months.update({key:temporal.Month('Month', m, [record], y)})
 
     print_months(months)
     return months
