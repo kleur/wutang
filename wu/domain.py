@@ -15,6 +15,7 @@ class Record:
     def prettyprint(self):
         descr = "<< descr: %s >>" % (self.description) if self.category == "unknown" else ""
         print(self.to_string() + descr)
+        #if(self.amount < -49 and self.category == "unknown"):
 
     def to_string(self):
         return "date: %s Q%s amount: %s category: %s " % (self.date.strftime('%Y-%m-%d'), self.quarter, self.amount, self.category)

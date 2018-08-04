@@ -3,10 +3,10 @@ from wu import helpers
 from wu import strategy
 
 def execute_me():
-    categories = helpers.init_categories('categories.yaml')
-    records = helpers.init_records('finance_records.csv')
+    categories = helpers.init_categories('input/categories.yaml')
+    records = helpers.init_records('input/finance_records.csv')
     records_categorized = apply_categories(categories, records)
-    units = strategy.split_quarters(records_categorized)
+    units = strategy.split_months(records_categorized)
     helpers.print_units(units)
 
 def apply_category(categories, record):
