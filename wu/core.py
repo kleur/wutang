@@ -8,6 +8,7 @@ def execute_me():
     records_categorized = apply_categories(categories, records)
 
     repository = domain.Repository
+    helpers.split_months(records_categorized)
 
 
 def apply_category(categories, record):
@@ -16,7 +17,7 @@ def apply_category(categories, record):
         for keyword in keywords:
             if keyword in record.description:
                 record.category = c.name
-    record.prettyprint()
+    #record.prettyprint()
     return record
 
 def apply_categories(categories, records):

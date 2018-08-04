@@ -11,9 +11,12 @@ class Record:
     category="unknown"
 
     def prettyprint(self):
-        print("date: %s Q%s amount: %s category: %s" % (self.date.strftime('%Y-%m-%d'), self.quarter, self.amount, self.category))
+        print(self.to_string())
         if self.category == "unknown":
             print(" descr: %s" % (self.description))
+
+    def to_string(self):
+        return "date: %s Q%s amount: %s category: %s" % (self.date.strftime('%Y-%m-%d'), self.quarter, self.amount, self.category)
 
 class Repository:
     def __init__(self, bookyears):

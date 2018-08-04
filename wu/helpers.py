@@ -16,6 +16,27 @@ def init_categories(filename):
             categories.append(create_category(k, v))
     return categories
 
+
+def print_months(months):
+    for k in months.keys():
+        entries = months.get(k)
+        for e in entries:
+            print(e.to_string())
+
+def split_months(records):
+    months = dict()
+    for record in records:
+        key = str(record.date.year) + '_' + str(record.date.month)
+        if(months.has_key(key)):
+            month = months.get(key)
+            month.append(record)
+        else:
+            months.update({key:[record]})
+
+    print_months(months)
+    return months
+
+
 def to_records(rows):
     records = []
     for row in rows:
