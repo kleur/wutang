@@ -18,9 +18,9 @@ def init_categories(filename):
     return categories
 
 def print_units(temporal_units):
-    for k in temporal_units.keys():
-        month = temporal_units.get(k)
-        month.prettyprint()
+    for k in sorted(temporal_units.keys()):
+        unit = temporal_units.get(k)
+        unit.prettyprint()
 
 def to_records(rows):
     records = []
