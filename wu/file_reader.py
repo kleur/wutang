@@ -5,6 +5,7 @@ def import_csv(filename):
     rows = []
     with open(filename, 'rb') as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+        next(reader, None)
         for row in reader:
             rows.append(row)
     return rows
@@ -16,5 +17,3 @@ def import_yaml(filename):
     for doc in docs:
         roots.append(doc)
     return roots
-
-#TODO: ignore 1st (header) line
