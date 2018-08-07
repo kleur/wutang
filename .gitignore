@@ -1,5 +1,7 @@
-.idea/*
+.idea/
 
 *.csv
 *.yaml
 *.yml
+
+*.pyc
