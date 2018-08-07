@@ -23,4 +23,5 @@ def apply_categories(categories, records):
         categorized.append(apply_category(categories, r))
     return categorized
 
-#TODO: split records into months
+#TODO: introduce main categories > sub categories
+#TODO: calculate percentages
