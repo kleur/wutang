@@ -1,0 +1,31 @@
+accomodation:
+    - Real Estate Rentals
+
+utilities:
+    - Gas and Electricity company
+    - Water company
+    - Internet provider
+    - Phone company
+    - TV company
+
+subscriptions:
+    - Netflix
+
+groceries:
+    - Super Market
+    - Vegetable store
+    - Cheese store
+    - Butcher
+    - Fish store
+
+automotive:
+    - Texaco
+    - Shell
+    - Car tax
+    - Car insurance
+
+salary:
+    - My Employer B.V.
+
+leisure:
+    - Irish pub Molly's

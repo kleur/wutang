@@ -1,8 +1,9 @@
+# idea & OS files
 .idea/
 .DS_Store
 
-*.csv
-*.yaml
-*.yml
+# live input containing personal info
+input/
 
+# compilation files
 *.pyc
