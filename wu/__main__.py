@@ -3,6 +3,7 @@ import core
 
 __author__ = 'kole'
 
+
 def main(args=None):
     """The main routine."""
     if args is None:
@@ -14,6 +15,7 @@ def main(args=None):
 
     # Do argument parsing here (eg. with argparse) and anything else
     # you want your project to do.
+
 
 if __name__ == "__main__":
     main()
