@@ -33,7 +33,7 @@ def to_record(row):
     date = to_date(row[0])
     amount = to_amount(row[6], row[5])
     kind = row[7]
-    desc_str = row[1] + " " + row[8]
+    desc_str = row[1] + " - " + row[8]
     return make_record(date, amount, kind, desc_str)
 
 def to_date(date_string):

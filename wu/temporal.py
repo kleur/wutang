@@ -11,7 +11,7 @@ class TemporalUnit:
         print(self.get_header())
         print("-------------------------")
         for r in self.records:
-            r.prettyprint()
+            r.prettyprint_short(True)
         print("-------------------------")
         print(self.get_totals_line())
         print("-------------------------")
