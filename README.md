@@ -4,20 +4,6 @@ personal finance labeling &amp; overview tool
 
 ##### Example input
 
-| "Datum"    | "Naam / Omschrijving"   | "Rekening" | "Tegenrekening" | "Code" | "Af Bij" | "Bedrag (EUR)"   | "MutatieSoort"       | "Mededelingen"          | 
-|------------|-------------------------|------------|-----------------|--------|----------|------------------|----------------------|-------------------------| 
-| "20180629" | "Phone company"         | "MY123"    | "XX123"         | "IC"   | "Af"     | "33,50"          | "Incasso"            | "Phone bill 23-06-2018" | 
-| "20180628" | "Myself"                | "MY123","" | "OV"            | "Af"   | "500,00" | "Overschrijving" | "To savings account" |                         | 
-| "20180622" | "My Employer"           | "MY123"    | "XX123"         | "OV"   | "Bij"    | "3000,00"        | "Overschrijving"     | "Salaris juni 2018"     | 
-| "20180610" | "Irish pub Molly's"     | "XX123","" | "BA"            | "Af"   | "55,00"  | "Betaalautomaat" | "Pasvolgnr:007"      |                         | 
-| "20180603" | "Super Market"          | "XX123","" | "BA"            | "Af"   | "34,65"  | "Betaalautomaat" | "Pasvolgnr:007"      |                         | 
-| "20180605" | "Super Market"          | "XX123","" | "BA"            | "Af"   | "53,50"  | "Betaalautomaat" | "Pasvolgnr:007"      |                         | 
-| "20180605" | "Texaco"                | "XX123","" | "BA"            | "Af"   | "52,10"  | "Betaalautomaat" | "Pasvolgnr:007"      |                         | 
-| "20180503" | "Water company"         | "MY123"    | "XX123"         | "IC"   | "Af"     | "20,50"          | "Incasso"            | "Water bill"            | 
-| "20180603" | "Super Market"          | "XX123","" | "BA"            | "Af"   | "33,10"  | "Betaalautomaat" | "Pasvolgnr:007"      |                         | 
-| "20180602" | "Car insurance company" | "MY123"    | "XX123"         | "IC"   | "Af"     | "33,50"          | "Incasso"            | "Car insurance"         | 
-| "20180601" | "My Friend"             | "MY123"    | "XX123"         | "GT"   | "Af"     | "7,00"           | "Online bankieren"   | "Netflix"               | 
-| "20180601" | "Real Estate Rentals"   | "MY123"    | "XX123"         | "IC"   | "Af"     | "1020,50"        | "Incasso"            | "Rent june 2018"        | 
 
 
 ##### Example output
