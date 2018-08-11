@@ -14,7 +14,7 @@ class Record:
         print(self.to_string() + (self.get_descr_str() if incl_descr else ""))
 
     def prettyprint_short(self, incl_descr):
-        print("%s Q%s %s %s" % (self.date.strftime('%Y-%m-%d'), self.quarter, self.amount, self.category) + (" " + self.description if incl_descr else ""))
+        print(self.prettyprint_short(incl_descr))
 
     def print_unknown_from(self, amount):
         if(self.category == "unknown"):
@@ -29,3 +29,6 @@ class Record:
 
     def to_string(self):
         return "date: %s Q%s amount: %s category: %s " % (self.date.strftime('%Y-%m-%d'), self.quarter, self.amount, self.category)
+
+    def to_string_short(self, incl_descr):
+        return "%s Q%s %s %s" % (self.date.strftime('%Y-%m-%d'), self.quarter, self.amount, self.category) + (" " + self.description if incl_descr else "");

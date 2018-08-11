@@ -1,5 +1,5 @@
 from wu import domain
-from wu import temporal
+from wu import file_writer
 from wu import file_reader
 import datetime
 import math
@@ -65,3 +65,7 @@ def create_category(name, keywords):
     category.name = name
     category.keywords = keywords
     return category
+
+
+def write_units(units):
+    file_writer.write_txt("overview", units)

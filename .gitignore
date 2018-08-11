@@ -4,6 +4,7 @@
 
 # live input containing personal info
 live_input/
+output/**
 
 # compilation files
 *.pyc

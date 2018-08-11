@@ -7,18 +7,25 @@ class TemporalUnit:
         self.records = records
 
     def prettyprint(self):
-        print("-------------------------")
-        print(self.get_header())
-        print("-------------------------")
+        lines = self.get_lines()
+        for line in lines:
+            print(line)
+
+    def get_lines(self):
+        lines = []
+        lines.append("-------------------------")
+        lines.append(self.get_header())
+        lines.append("-------------------------")
         for r in self.records:
-            r.prettyprint_short(True)
-        print("-------------------------")
-        print(self.get_totals_line())
-        print("-------------------------")
+            lines.append(r.to_string_short(True))
+        lines.append("-------------------------")
+        lines.append(self.get_totals_line())
+        lines.append("-------------------------")
         categories = self.split_categories(self.records)
         for k in categories.keys():
-            print("%s : %s" % (k, categories.get(k)))
-        print("\n")
+            lines.append("%s : %s" % (k, categories.get(k)))
+        lines.append("\n")
+        return lines
 
     def get_header(self):
         return "%s %s" % (self.unit, self.year)

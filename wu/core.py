@@ -2,12 +2,13 @@
 from wu import helpers
 from wu import strategy
 
-def execute_me():
+def execute():
     categories = helpers.init_categories('input/categories.yaml')
     records = helpers.init_records('input/finance_records.csv')
     records_categorized = apply_categories(categories, records)
     units = strategy.split_months(records_categorized)
     helpers.print_units(units)
+    helpers.write_units(units)
 
 def apply_category(categories, record):
     for c in categories:

@@ -11,7 +11,7 @@ def main(args=None):
 
     print("WU TANG FINANCIAL")
     print("C.R.E.A.M.\n")
-    core.execute_me()
+    core.execute()
 
     # Do argument parsing here (eg. with argparse) and anything else
     # you want your project to do.
